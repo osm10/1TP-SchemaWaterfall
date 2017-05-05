@@ -48,8 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\UtilizadorController.cs" />
+    <Compile Include="Models\Bug.cs" />
     <Compile Include="Models\DataModel.cs" />
     <Compile Include="Models\Projeto.cs" />
+    <Compile Include="Models\Subtarefa.cs" />
     <Compile Include="Models\Tarefa.cs" />
     <Compile Include="Models\Utilizador.cs" />
     <Compile Include="Models\UtilizadorRegisto.cs" />
