@@ -8,6 +8,8 @@ namespace _1TP_SchemaWaterfall.Models
 {
     public class Tarefa
     {
+        public string Nome { get; set; }
 
+        public DateTime Data { get; set; }
     }
 }
