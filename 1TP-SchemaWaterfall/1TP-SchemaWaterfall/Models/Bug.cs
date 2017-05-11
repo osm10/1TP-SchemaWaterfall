@@ -11,6 +11,8 @@ namespace _1TP_SchemaWaterfall.Models
         public int Codigo { get; set; }
 
         public string Descricao { get; set; }
+
+        public DateTime Databpub { get; set; }
         
     }
 }

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Teste1
+namespace _1TP_SchemaWaterfall.Controllers
 {
-    public class FireController
+    public class ProjetoController
     {
-
     }
 }
