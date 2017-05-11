@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ProjetoController.cs" />
+    <Compile Include="Controllers\TarefaController.cs" />
     <Compile Include="Controllers\UtilizadorController.cs" />
     <Compile Include="Models\Bug.cs" />
     <Compile Include="Models\DataModel.cs" />
