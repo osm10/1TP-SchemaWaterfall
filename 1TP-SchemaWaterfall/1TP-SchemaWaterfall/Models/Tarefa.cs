@@ -13,5 +13,7 @@ namespace _1TP_SchemaWaterfall.Models
         public DateTime Datainicio { get; set; }
 
         public DateTime Datafinal { get; set; }
+
+
     }
 }

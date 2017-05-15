@@ -10,8 +10,7 @@ namespace _1TP_SchemaWaterfall.Controllers
         public bool AdicionarSubtarefa(Tarefa ta, Subtarefa subt)
         {
             if (ta != null && subt != null)
-            {
-               
+            {               
                 subtarefas.Add(subt);
             }
             return false;
