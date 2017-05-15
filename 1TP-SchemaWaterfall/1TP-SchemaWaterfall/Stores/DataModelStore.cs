@@ -11,7 +11,7 @@ namespace _1TP_SchemaWaterfall.Stores
     {
         public DataModel DataModel { get; private set; }
 
-        private DataModelStore()
+        public DataModelStore()
         {
             if (Instance != null)
             {

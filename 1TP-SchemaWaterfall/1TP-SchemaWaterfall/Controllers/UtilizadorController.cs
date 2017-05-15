@@ -8,25 +8,31 @@ namespace _1TP_SchemaWaterfall.Controllers
 {
     public class UtilizadorController
     {
-        private List<Utilizador> _utilizadores = new List<Utilizador>();
+        private List<UtilizadorRegisto> _utilizadores = new List<UtilizadorRegisto>();
         public UtilizadorController()
         {
+            
             foreach (Projeto project in DataModelStore.Instance.DataModel.ProjetosList)
             {
                 Console.WriteLine(project.Nome);
             }
-            DataModelStore.Instance.DataModel.UtilizadorRegisto.UtilizadoresList.Add(new Utilizador() { Username = "USer 4", Password = "asdfadsf" });
+            //DataModelStore.Instance.DataModel.UtilizadorRegisto.UtilizadoresList.Add(new Utilizador() { Username = "USer 4", Password = "asdfadsf" });
             Console.ReadLine();
         }
 
-        public void CriarUtilizador(Utilizador ut)
+        public bool RegistarUtilizador(UtilizadorRegisto ur)
         {
-            _utilizadores.Add(ut);
+            if (ur != null)
+            {
+                _utilizadores.Add(ur);
+                return true;
+            }
+            return false;
         }
 
-        public bool RemoverUtilizador(string username)
+        public bool RemoverUtilizador(int bidentidade)
         {
-            var utilizador = _utilizadores.FirstOrDefault(u => u.Username == username);
+            var utilizador = _utilizadores.FirstOrDefault(u => u.Bident == bidentidade);
             if (utilizador == null) return false;
             return _utilizadores.Remove(utilizador);
         }
@@ -37,7 +43,7 @@ namespace _1TP_SchemaWaterfall.Controllers
             {
                 foreach (var uti in _utilizadores)
                 {
-                    Console.WriteLine("Username " + uti.Username);
+                    Console.WriteLine("Nome " + uti.Nome + " B.I: " +uti.Bident+" Username: "+uti.Utilizador.Username+" Password: ");
                 }
             }
             else Console.WriteLine("Sem utilizadores!");
