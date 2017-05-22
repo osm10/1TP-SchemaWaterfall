@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Windows.Forms;
 using _1TP_SchemaWaterfall.Models;
+using _1TP_SchemaWaterfall.Stores;
 
 namespace WindowsFormsMenu
 {
     public partial class RegistarUtilizador : Form
     {
-        public RegistarUtilizador()
+        public RegistarUtilizador(Form f)
         {
             InitializeComponent();
+            //f.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -12,12 +12,6 @@ namespace _1TP_SchemaWaterfall.Controllers
         public UtilizadorController()
         {
             
-            foreach (Projeto project in DataModelStore.Instance.DataModel.ProjetosList)
-            {
-                Console.WriteLine(project.Nome);
-            }
-            //DataModelStore.Instance.DataModel.UtilizadorRegisto.UtilizadoresList.Add(new Utilizador() { Username = "USer 4", Password = "asdfadsf" });
-            Console.ReadLine();
         }
 
         public bool RegistarUtilizador(UtilizadorRegisto ur)
@@ -47,6 +41,11 @@ namespace _1TP_SchemaWaterfall.Controllers
                 }
             }
             else Console.WriteLine("Sem utilizadores!");
+        }
+
+        public static string GetPassword(string username, string password)
+        {
+            throw new NotImplementedException();
         }
     }
 
