@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsMenu
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -16,6 +16,7 @@ namespace WindowsFormsMenu
             try
             {
                 ValidarLogin();
+
             }
             catch (Exception exception)
             {
@@ -36,27 +37,32 @@ namespace WindowsFormsMenu
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void ValidarLogin()
         {
-
+            UtilizadorController uc = new UtilizadorController();
             var username = textBox1.Text;
             var password = textBox2.Text;
-
-            var pass = UtilizadorController.GetPassword(username, password);
+            
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Username ou password incorrecta.\n\nPor favor verifique",
                     "Credenciais inválidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            if (pass != password)
+
+            bool confirm = uc.ContaValida(username, password);
+            if (confirm)
+            {
+                MDIWaterfall mw = new MDIWaterfall();
+                mw.Show();
+            }
+            else
             {
                 MessageBox.Show("Username ou password incorrecta.\n\nPor favor verifique",
                     "Credenciais inválidas", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
             }
         }
     }

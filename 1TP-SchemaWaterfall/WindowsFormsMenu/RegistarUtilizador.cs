@@ -15,16 +15,28 @@ namespace WindowsFormsMenu
 
         private void button1_Click(object sender, EventArgs e)
         {
+            DataModel data = new DataModel();
             int bident;
-            UtilizadorRegisto utrtRegisto = new UtilizadorRegisto();
-            utrtRegisto.Nome = textBox1.Text;
+            UtilizadorRegisto utrtRegisto = new UtilizadorRegisto {Nome = textBox1.Text};
             if(int.TryParse(textBox2.Text, out bident))
             {
                 utrtRegisto.Bident = bident;
             }
-            utrtRegisto.Utilizador.Username = textBox3.Text;
-            utrtRegisto.Utilizador.Password = textBox4.Text;
+            Utilizador ut = new Utilizador() {Username = textBox3.Text, Password = textBox4.Text};
+            //utrtRegisto.Utilizador.Username = textBox3.Text;
+            //utrtRegisto.Utilizador.Password = textBox4.Text;
+            utrtRegisto.Utilizador = ut;
+            data.UtilizadorRegisto = utrtRegisto;
+            DataModelStore ds = new DataModelStore {DataModel = data};
+            //DataModelStore.Instance.DataModel = data;
+            
+            MessageBox.Show("O utilizador foi registado com sucesso!");
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -9,7 +9,7 @@ namespace _1TP_SchemaWaterfall.Stores
 {
     public class DataModelStore
     {
-        public DataModel DataModel { get; private set; }
+        public DataModel DataModel { get; set; }
 
         public DataModelStore()
         {
