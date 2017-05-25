@@ -14,9 +14,9 @@ namespace WindowsFormsMenu
 
         private void ShowNewForm(object sender, EventArgs e)
         {
-            Form childForm = new Form();
+            Form childForm = new NProjeto();
             childForm.MdiParent = this;
-            childForm.Text = "Window " + childFormNumber++;
+            childForm.Text = "Novo Projeto " + childFormNumber++;
             childForm.Show();
         }
 

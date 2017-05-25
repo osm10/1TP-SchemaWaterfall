@@ -15,7 +15,10 @@ namespace WindowsFormsMenu
         {
             try
             {
-                ValidarLogin();
+                MDIWaterfall mw = new MDIWaterfall();
+                mw.Show();
+                //Close();
+                //ValidarLogin();
 
             }
             catch (Exception exception)
