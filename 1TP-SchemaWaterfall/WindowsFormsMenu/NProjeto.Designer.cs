@@ -128,6 +128,7 @@
             // radioButton1
             // 
             this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
             this.radioButton1.Location = new System.Drawing.Point(153, 163);
             this.radioButton1.Name = "radioButton1";
             this.radioButton1.Size = new System.Drawing.Size(81, 21);
@@ -139,55 +140,55 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.Enabled = false;
             this.radioButton2.Location = new System.Drawing.Point(277, 163);
             this.radioButton2.Name = "radioButton2";
             this.radioButton2.Size = new System.Drawing.Size(76, 21);
             this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Testing";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Enabled = false;
             this.radioButton3.Location = new System.Drawing.Point(153, 188);
             this.radioButton3.Name = "radioButton3";
             this.radioButton3.Size = new System.Drawing.Size(92, 21);
             this.radioButton3.TabIndex = 11;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Designing";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.Enabled = false;
             this.radioButton4.Location = new System.Drawing.Point(277, 190);
             this.radioButton4.Name = "radioButton4";
             this.radioButton4.Size = new System.Drawing.Size(124, 21);
             this.radioButton4.TabIndex = 12;
-            this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Implementation";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton5
             // 
             this.radioButton5.AutoSize = true;
+            this.radioButton5.Enabled = false;
             this.radioButton5.Location = new System.Drawing.Point(153, 215);
             this.radioButton5.Name = "radioButton5";
             this.radioButton5.Size = new System.Drawing.Size(73, 21);
             this.radioButton5.TabIndex = 13;
-            this.radioButton5.TabStop = true;
             this.radioButton5.Text = "Coding";
             this.radioButton5.UseVisualStyleBackColor = true;
             // 
             // radioButton6
             // 
             this.radioButton6.AutoSize = true;
+            this.radioButton6.Enabled = false;
             this.radioButton6.Location = new System.Drawing.Point(277, 215);
             this.radioButton6.Name = "radioButton6";
             this.radioButton6.Size = new System.Drawing.Size(110, 21);
             this.radioButton6.TabIndex = 14;
-            this.radioButton6.TabStop = true;
             this.radioButton6.Text = "Maintenance";
             this.radioButton6.UseVisualStyleBackColor = true;
             // 

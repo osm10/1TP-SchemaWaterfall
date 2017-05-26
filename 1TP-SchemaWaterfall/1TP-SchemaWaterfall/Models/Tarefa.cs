@@ -14,6 +14,19 @@ namespace _1TP_SchemaWaterfall.Models
 
         public DateTime Datafinal { get; set; }
 
-
+        public TarefaTipo Tipo { get; set; }
     }
+
+    public enum TarefaTipo 
+    {
+        Unstart,
+        Analysis,
+        Designing,
+        Coding,
+        Testing,
+        Implementation,
+        Maintenance
+    }
+
+
 }
