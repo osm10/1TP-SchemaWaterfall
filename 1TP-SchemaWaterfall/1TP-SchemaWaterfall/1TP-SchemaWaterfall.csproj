@@ -50,6 +50,7 @@
     <Compile Include="Controllers\ProjetoController.cs" />
     <Compile Include="Controllers\TarefaController.cs" />
     <Compile Include="Controllers\UtilizadorController.cs" />
+    <Compile Include="Helpers\GestorFicheiros.cs" />
     <Compile Include="Models\Bug.cs" />
     <Compile Include="Models\DataModel.cs" />
     <Compile Include="Models\Projeto.cs" />

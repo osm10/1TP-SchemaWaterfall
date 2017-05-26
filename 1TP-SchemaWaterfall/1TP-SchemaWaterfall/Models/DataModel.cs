@@ -8,7 +8,14 @@ namespace _1TP_SchemaWaterfall.Models
 {
     public class DataModel
     {
-        public UtilizadorRegisto UtilizadorRegisto { get; set; }
-        public List<Projeto> ProjetosList { get; set; }
+        public DataModel()
+        {
+            //UtilizadorList = new List<Utilizador>();
+            UtilizadorRegisto = new List<UtilizadorRegisto>();
+            //ProjetosList = new List<Projeto>();
+        }
+        public List<UtilizadorRegisto>UtilizadorRegisto { get; set; }
+        //public List<Utilizador> UtilizadorList { get; set; }
+        //public List<Projeto> ProjetosList { get; set; }
     }
 }

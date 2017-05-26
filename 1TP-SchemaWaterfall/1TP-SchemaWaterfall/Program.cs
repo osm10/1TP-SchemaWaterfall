@@ -1,11 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using _1TP_SchemaWaterfall.Controllers;
 using _1TP_SchemaWaterfall.Models;
-using _1TP_SchemaWaterfall.Stores;
 
 namespace _1TP_SchemaWaterfall
 {
@@ -33,7 +29,7 @@ namespace _1TP_SchemaWaterfall
             subtarefa.Descricao = "teste";
             subtarefa.Nome = "Recolha de requisitos";
             
-            dm.UtilizadorRegisto= new UtilizadorRegisto();
+            //dm.UtilizadorRegisto= new UtilizadorRegisto();
             //dm.UtilizadorRegisto.UtilizadoresList = new List<Utilizador>();
             
 
