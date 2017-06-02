@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using _1TP_SchemaWaterfall.Controllers;
+using _1TP_SchemaWaterfall.Helpers;
 using _1TP_SchemaWaterfall.Models;
 
 namespace WindowsFormsMenu
@@ -14,15 +15,21 @@ namespace WindowsFormsMenu
             Open = true;
             ShowTextBox2();
         }
-
+        Projeto pro = new Projeto();
+        UtilizadorController uc = new UtilizadorController();
+        
         private void ShowTextBox2()
         {
-            textBox2.Text += comboBox1.Text;
+            foreach (var user in GestorFicheiros.LoadUsers())
+            {
+                comboBox1.Items.Add(user);
+            }
+             
         }
+     
         private void button1_Click(object sender, EventArgs e)
         {
-            Projeto pro = new Projeto();
-            UtilizadorController uc = new UtilizadorController();
+            
             if (string.IsNullOrWhiteSpace(textBox1.Text)|| string.IsNullOrWhiteSpace(comboBox1.Text))
             {
                 MessageBox.Show("Preencha todos os campos!");
@@ -30,12 +37,8 @@ namespace WindowsFormsMenu
             
             pro.Nome = textBox1.Text;
 
-            foreach (var ut in uc.Utilizadores)
-            {
-                comboBox1.Items.Add(ut);
-                textBox2.Text = comboBox1.Text;
-            }
-            
+            //ShowTextBox2();
+
         }
         private void button2_Click(object sender, EventArgs e)
         {

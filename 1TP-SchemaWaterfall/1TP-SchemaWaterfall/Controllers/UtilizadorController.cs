@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _1TP_SchemaWaterfall.Helpers;
 using _1TP_SchemaWaterfall.Models;
 using _1TP_SchemaWaterfall.Stores;
 
@@ -12,7 +13,8 @@ namespace _1TP_SchemaWaterfall.Controllers
 
         public UtilizadorController()
         {
-            Utilizadores = new List<UtilizadorRegisto>();
+            //Utilizadores = new List<UtilizadorRegisto>();
+            Utilizadores = GestorFicheiros.LoadUsersDados();
         }
 
         public bool RegistarUtilizador(UtilizadorRegisto ur)
@@ -46,11 +48,12 @@ namespace _1TP_SchemaWaterfall.Controllers
 
         public bool ContaValida(string username, string password)
         {
-            if (Utilizadores.Count > 0)
+            List<Utilizador> users = GestorFicheiros.LoadUsers();
+            if (users.Count > 0)
             {
-                foreach (var ut in Utilizadores)
+                foreach (var ut in users)
                 {
-                    if (ut.Utilizador.Username == username && ut.Utilizador.Password == password)
+                    if (ut.Username == username && ut.Password == password)
                     {
                         return true;
                     }

@@ -1,5 +1,6 @@
 ﻿using _1TP_SchemaWaterfall.Controllers;
 using System;
+using System.Net.Mime;
 using System.Windows.Forms;
 
 namespace WindowsFormsMenu
@@ -9,17 +10,15 @@ namespace WindowsFormsMenu
         public Login()
         {
             InitializeComponent();
+            textBox2.UseSystemPasswordChar = true; //para ocultar os caracteres da textbox2 password
+            
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                MDIWaterfall mw = new MDIWaterfall();
-                mw.Show();
-                //Close();
-                //ValidarLogin();
-
+                ValidarLogin(textBox1.Text,textBox2.Text);
             }
             catch (Exception exception)
             {
@@ -43,11 +42,9 @@ namespace WindowsFormsMenu
             Close();
         }
 
-        private void ValidarLogin()
+        private void ValidarLogin(string username, string password)
         {
             UtilizadorController uc = new UtilizadorController();
-            var username = textBox1.Text;
-            var password = textBox2.Text;
             
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
@@ -61,6 +58,7 @@ namespace WindowsFormsMenu
             {
                 MDIWaterfall mw = new MDIWaterfall();
                 mw.Show();
+                Hide();
             }
             else
             {

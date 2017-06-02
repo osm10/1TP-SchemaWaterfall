@@ -96,5 +96,11 @@ namespace WindowsFormsMenu
                 childForm.Close();
             }
         }
+
+        private void criarUtilizadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistarUtilizador ru = new RegistarUtilizador(this);
+            ru.Show();
+        }
     }
 }

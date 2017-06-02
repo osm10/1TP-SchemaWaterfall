@@ -44,6 +44,9 @@
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizadoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.criarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apagarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,6 +66,8 @@
             this.statusBarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editarProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.apagarProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.windowsMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.newWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -90,11 +95,6 @@
             this.statusStrip = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.criarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apagarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apagarProjetoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip.SuspendLayout();
             this.statusStrip.SuspendLayout();
@@ -145,7 +145,7 @@
             this.newToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
             this.newToolStripMenuItem.Name = "newToolStripMenuItem";
             this.newToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.N)));
-            this.newToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.newToolStripMenuItem.Size = new System.Drawing.Size(173, 26);
             this.newToolStripMenuItem.Text = "&New";
             this.newToolStripMenuItem.Click += new System.EventHandler(this.ShowNewForm);
             // 
@@ -229,6 +229,25 @@
             this.utilizadoresToolStripMenuItem1.Name = "utilizadoresToolStripMenuItem1";
             this.utilizadoresToolStripMenuItem1.Size = new System.Drawing.Size(100, 24);
             this.utilizadoresToolStripMenuItem1.Text = "Utilizadores";
+            // 
+            // criarUtilizadorToolStripMenuItem
+            // 
+            this.criarUtilizadorToolStripMenuItem.Name = "criarUtilizadorToolStripMenuItem";
+            this.criarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.criarUtilizadorToolStripMenuItem.Text = "Criar Utilizador";
+            this.criarUtilizadorToolStripMenuItem.Click += new System.EventHandler(this.criarUtilizadorToolStripMenuItem_Click);
+            // 
+            // editarUtilizadorToolStripMenuItem
+            // 
+            this.editarUtilizadorToolStripMenuItem.Name = "editarUtilizadorToolStripMenuItem";
+            this.editarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.editarUtilizadorToolStripMenuItem.Text = "Editar Utilizador";
+            // 
+            // apagarUtilizadorToolStripMenuItem
+            // 
+            this.apagarUtilizadorToolStripMenuItem.Name = "apagarUtilizadorToolStripMenuItem";
+            this.apagarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.apagarUtilizadorToolStripMenuItem.Text = "Apagar Utilizador";
             // 
             // tarefasToolStripMenuItem
             // 
@@ -387,8 +406,20 @@
             this.editarProjetoToolStripMenuItem,
             this.apagarProjetoToolStripMenuItem});
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(136, 26);
             this.optionsToolStripMenuItem.Text = "&Options";
+            // 
+            // editarProjetoToolStripMenuItem
+            // 
+            this.editarProjetoToolStripMenuItem.Name = "editarProjetoToolStripMenuItem";
+            this.editarProjetoToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.editarProjetoToolStripMenuItem.Text = "Editar Projeto";
+            // 
+            // apagarProjetoToolStripMenuItem
+            // 
+            this.apagarProjetoToolStripMenuItem.Name = "apagarProjetoToolStripMenuItem";
+            this.apagarProjetoToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
+            this.apagarProjetoToolStripMenuItem.Text = "Apagar Projeto";
             // 
             // windowsMenu
             // 
@@ -608,36 +639,6 @@
             this.toolStripStatusLabel.Name = "toolStripStatusLabel";
             this.toolStripStatusLabel.Size = new System.Drawing.Size(49, 20);
             this.toolStripStatusLabel.Text = "Status";
-            // 
-            // criarUtilizadorToolStripMenuItem
-            // 
-            this.criarUtilizadorToolStripMenuItem.Name = "criarUtilizadorToolStripMenuItem";
-            this.criarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
-            this.criarUtilizadorToolStripMenuItem.Text = "Criar Utilizador";
-            // 
-            // apagarUtilizadorToolStripMenuItem
-            // 
-            this.apagarUtilizadorToolStripMenuItem.Name = "apagarUtilizadorToolStripMenuItem";
-            this.apagarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.apagarUtilizadorToolStripMenuItem.Text = "Apagar Utilizador";
-            // 
-            // editarUtilizadorToolStripMenuItem
-            // 
-            this.editarUtilizadorToolStripMenuItem.Name = "editarUtilizadorToolStripMenuItem";
-            this.editarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.editarUtilizadorToolStripMenuItem.Text = "Editar Utilizador";
-            // 
-            // editarProjetoToolStripMenuItem
-            // 
-            this.editarProjetoToolStripMenuItem.Name = "editarProjetoToolStripMenuItem";
-            this.editarProjetoToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
-            this.editarProjetoToolStripMenuItem.Text = "Editar Projeto";
-            // 
-            // apagarProjetoToolStripMenuItem
-            // 
-            this.apagarProjetoToolStripMenuItem.Name = "apagarProjetoToolStripMenuItem";
-            this.apagarProjetoToolStripMenuItem.Size = new System.Drawing.Size(185, 26);
-            this.apagarProjetoToolStripMenuItem.Text = "Apagar Projeto";
             // 
             // MDIWaterfall
             // 
