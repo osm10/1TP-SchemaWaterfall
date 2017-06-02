@@ -10,6 +10,9 @@ namespace _1TP_SchemaWaterfall.Models
     {
         public string Nome { get; set; }
         public Utilizador User { get; set; }
+
+        public DateTime Datainicio { get; set; }
+
         public List<Tarefa> Tarefas { get; set; }
     }
 }

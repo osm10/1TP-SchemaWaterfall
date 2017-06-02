@@ -17,6 +17,10 @@ namespace _1TP_SchemaWaterfall.Models
             UtilizadorRegisto = new List<UtilizadorRegisto>();
             //ProjetosList = new List<Projeto>();
         }
-        
+
+        /*public DataModel(List<Utilizador> listaUtilizadors)
+        {
+            UtilizadorList = new List<Utilizador>(listaUtilizadors);
+        }*/
     }
 }

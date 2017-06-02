@@ -88,5 +88,49 @@ namespace _1TP_SchemaWaterfall.Helpers
                 serializer.Serialize(file, userdados);
             }
         }
+
+        public static List<Projeto> LoadProjetos()
+        {
+            if (!File.Exists("projetos.txt")) return null;
+            using (StreamReader r = new StreamReader("projetos.txt"))
+            {
+                string json = r.ReadToEnd();
+                List<Projeto> projetos = JsonConvert.DeserializeObject<List<Projeto>>(json);
+                return projetos;
+            }
+        }
+
+        public static void GravaProjetos(List<Projeto> projetos)
+        {
+            //open file stream
+            using (StreamWriter file = new StreamWriter("projetos.txt"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                //serialize object directly into file stream
+                serializer.Serialize(file, projetos);
+            }
+        }
+
+        public static List<Tarefa> LoadTarefas()
+        {
+            if (!File.Exists("tarefas.txt")) return null;
+            using (StreamReader r = new StreamReader("tarefas.txt"))
+            {
+                string json = r.ReadToEnd();
+                List<Tarefa> tarefas = JsonConvert.DeserializeObject<List<Tarefa>>(json);
+                return tarefas;
+            }
+        }
+
+        public static void GravaTarefas(List<Tarefa> tarefas)
+        {
+            //open file stream
+            using (StreamWriter file = new StreamWriter("tarefas.txt"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                //serialize object directly into file stream
+                serializer.Serialize(file, tarefas);
+            }
+        }
     }
 }
