@@ -9,12 +9,11 @@ namespace _1TP_SchemaWaterfall.Controllers
 {
     public class UtilizadorController
     {
-        public List<UtilizadorRegisto> Utilizadores { get; set; }
+        private List<UtilizadorRegisto> Utilizadores { get; set; }
 
         public UtilizadorController()
         {
-            //Utilizadores = new List<UtilizadorRegisto>();
-            Utilizadores = GestorFicheiros.LoadUsersDados();
+            Utilizadores = DataModelStore.Instance.DataModel.UtilizadorDados;
         }
 
         public bool RegistarUtilizador(UtilizadorRegisto ur)
@@ -26,24 +25,38 @@ namespace _1TP_SchemaWaterfall.Controllers
             }
             return false;
         }
-
+        public bool EditarUtilizador(int indice, UtilizadorRegisto nut)
+        { 
+            if (nut == null  || indice < 0 || indice >= Utilizadores.Count) return false;         
+                
+            Utilizadores[indice] = nut;
+            GestorFicheiros.GravaUsers(Utilizadores);
+            return true;
+        }
         public bool RemoverUtilizador(int bidentidade)
         {
-            var utilizador = Utilizadores.FirstOrDefault(u => u.Bident == bidentidade);
-            if (utilizador == null) return false;
-            return Utilizadores.Remove(utilizador);
+            if (Utilizadores == null) return false;
+            foreach (var ut in Utilizadores)
+            {
+                if (ut.Bident == bidentidade)
+                {
+                    if(Utilizadores.Remove(ut))
+                    {
+                        GestorFicheiros.GravaUsers(Utilizadores);
+                        return true;
+                    }
+                }
+            }
+            return false;
         }
 
-        public void ListarUtilizadores()
+        public List<UtilizadorRegisto> ListarUtilizadores()
         {
             if (Utilizadores.Count > 0)
             {
-                foreach (var uti in Utilizadores)
-                {
-                    Console.WriteLine("Nome " + uti.Nome + " B.I: " +uti.Bident+" Username: "+uti.Utilizador.Username+" Password: ");
-                }
+                return Utilizadores;
             }
-            else Console.WriteLine("Sem utilizadores!");
+            return null;
         }
 
         public bool ContaValida(string username, string password)

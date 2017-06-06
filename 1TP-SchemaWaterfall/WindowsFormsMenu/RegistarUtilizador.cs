@@ -20,7 +20,6 @@ namespace WindowsFormsMenu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataModelStore datast = new DataModelStore();
             int bident;
             UtilizadorRegisto utrRegisto = new UtilizadorRegisto {Nome = textBox1.Text};
             if(int.TryParse(textBox2.Text, out bident))
@@ -28,12 +27,13 @@ namespace WindowsFormsMenu
                 utrRegisto.Bident = bident;
             }
             Utilizador ut = new Utilizador() {Username = textBox3.Text, Password = textBox4.Text};
+            utrRegisto.Utilizador = ut;
             var users = GestorFicheiros.LoadUsers();
             users.Add(ut);
             GestorFicheiros.GravaUsers(users);
             //////////////////////////////////
-            utrRegisto.Utilizador = ut;
-            if (GestorFicheiros.LoadUsersDados()!=null)
+            
+            if (DataModelStore.Instance.DataModel.UtilizadorDados != null)
             {
                 var userdados = GestorFicheiros.LoadUsersDados();
                 userdados.Add(utrRegisto);
@@ -45,7 +45,6 @@ namespace WindowsFormsMenu
                 GestorFicheiros.GravaUsers(userdados);
             }
            
-
             MessageBox.Show("O utilizador foi registado com sucesso!");
 
         }

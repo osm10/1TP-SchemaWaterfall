@@ -102,5 +102,11 @@ namespace WindowsFormsMenu
             RegistarUtilizador ru = new RegistarUtilizador(this);
             ru.Show();
         }
+
+        private void apagarUtilizadorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditaApagaUttilizador apagaUttilizador = new EditaApagaUttilizador();
+            apagaUttilizador.Show();
+        }
     }
 }

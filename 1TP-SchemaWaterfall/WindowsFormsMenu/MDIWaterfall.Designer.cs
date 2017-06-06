@@ -45,7 +45,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utilizadoresToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.criarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.apagarUtilizadorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tarefasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
@@ -224,7 +223,6 @@
             // 
             this.utilizadoresToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.criarUtilizadorToolStripMenuItem,
-            this.editarUtilizadorToolStripMenuItem,
             this.apagarUtilizadorToolStripMenuItem});
             this.utilizadoresToolStripMenuItem1.Name = "utilizadoresToolStripMenuItem1";
             this.utilizadoresToolStripMenuItem1.Size = new System.Drawing.Size(100, 24);
@@ -237,17 +235,12 @@
             this.criarUtilizadorToolStripMenuItem.Text = "Criar Utilizador";
             this.criarUtilizadorToolStripMenuItem.Click += new System.EventHandler(this.criarUtilizadorToolStripMenuItem_Click);
             // 
-            // editarUtilizadorToolStripMenuItem
-            // 
-            this.editarUtilizadorToolStripMenuItem.Name = "editarUtilizadorToolStripMenuItem";
-            this.editarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.editarUtilizadorToolStripMenuItem.Text = "Editar Utilizador";
-            // 
             // apagarUtilizadorToolStripMenuItem
             // 
             this.apagarUtilizadorToolStripMenuItem.Name = "apagarUtilizadorToolStripMenuItem";
-            this.apagarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
-            this.apagarUtilizadorToolStripMenuItem.Text = "Apagar Utilizador";
+            this.apagarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
+            this.apagarUtilizadorToolStripMenuItem.Text = "Editar/Apagar Utilizador";
+            this.apagarUtilizadorToolStripMenuItem.Click += new System.EventHandler(this.apagarUtilizadorToolStripMenuItem_Click);
             // 
             // tarefasToolStripMenuItem
             // 
@@ -729,7 +722,6 @@
         private System.Windows.Forms.ToolStripMenuItem tarefasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem bugsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem criarUtilizadorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editarUtilizadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarUtilizadorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editarProjetoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem apagarProjetoToolStripMenuItem;

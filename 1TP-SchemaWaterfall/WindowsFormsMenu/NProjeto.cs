@@ -15,11 +15,8 @@ namespace WindowsFormsMenu
         {
             InitializeComponent();
             Open = true;
-            //ShowTextBox2();
-            foreach (Utilizador utilizador in DataModelStore.Instance.DataModel.UtilizadorList)
-            {
-                comboBox1.Items.Add(utilizador.Username);
-            }
+            ShowTextBox2();
+            
         }
         Projeto pro = new Projeto();
         UtilizadorController uc = new UtilizadorController();
@@ -27,13 +24,10 @@ namespace WindowsFormsMenu
         private string mytextbox2; 
         private void ShowTextBox2()
         {
-            
-            foreach (var user in GestorFicheiros.LoadUsers())
+            foreach (Utilizador utilizador in DataModelStore.Instance.DataModel.UtilizadorList)
             {
-              
-                comboBox1.Text += user.Username;
+                comboBox1.Items.Add(utilizador.Username);
             }
-            textBox2.Text = comboBox1.SelectedText;
         }
      
         private void button1_Click(object sender, EventArgs e)
@@ -44,11 +38,23 @@ namespace WindowsFormsMenu
                 MessageBox.Show("Preencha todos os campos!");
             }
             try
-            {               
+            {            
                 tarefa.Tipo = TarefaTipo.Analysis;
                 pro.Nome = textBox1.Text;
                 pro.User.Username = mytextbox2;
                 pro.Tarefas.Add(tarefa);
+
+                if (DataModelStore.Instance.DataModel.ProjetosList != null)
+                {
+                    var projetos = DataModelStore.Instance.DataModel.ProjetosList;
+                    projetos.Add(pro);
+                    GestorFicheiros.GravaProjetos(projetos);
+                }
+                else
+                {
+                    List<Projeto> projetos = new List<Projeto> { pro };
+                    GestorFicheiros.GravaProjetos(projetos);
+                }
                 MessageBox.Show("O Projeto foi gravado com sucesso!");
             }
             catch (Exception ex)

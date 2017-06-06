@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EditaApagaUttilizador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditaApagaUttilizador.Designer.cs">
+      <DependentUpon>EditaApagaUttilizador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     <Compile Include="Tarefas.Designer.cs">
       <DependentUpon>Tarefas.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="EditaApagaUttilizador.resx">
+      <DependentUpon>EditaApagaUttilizador.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>

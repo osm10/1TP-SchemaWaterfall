@@ -51,7 +51,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 32);
+            this.label1.Location = new System.Drawing.Point(25, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(122, 17);
             this.label1.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(153, 29);
+            this.textBox1.Location = new System.Drawing.Point(153, 68);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 22);
             this.textBox1.TabIndex = 16;
@@ -207,16 +207,16 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(153, 68);
+            this.dateTimePicker1.Location = new System.Drawing.Point(153, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(121, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(248, 22);
             this.dateTimePicker1.TabIndex = 17;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 73);
+            this.label5.Location = new System.Drawing.Point(25, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(102, 17);
             this.label5.TabIndex = 18;

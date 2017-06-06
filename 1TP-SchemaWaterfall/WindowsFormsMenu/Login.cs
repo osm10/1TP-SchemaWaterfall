@@ -18,7 +18,9 @@ namespace WindowsFormsMenu
         {
             try
             {
-                ValidarLogin(textBox1.Text,textBox2.Text);
+                MDIWaterfall mw = new MDIWaterfall();
+                mw.Show();
+                //ValidarLogin(textBox1.Text,textBox2.Text);
             }
             catch (Exception exception)
             {
@@ -45,7 +47,7 @@ namespace WindowsFormsMenu
         private void ValidarLogin(string username, string password)
         {
             UtilizadorController uc = new UtilizadorController();
-            
+
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Username ou password incorrecta.\n\nPor favor verifique",

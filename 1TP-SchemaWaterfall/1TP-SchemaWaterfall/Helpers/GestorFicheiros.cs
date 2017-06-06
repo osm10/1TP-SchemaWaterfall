@@ -12,39 +12,39 @@ namespace _1TP_SchemaWaterfall.Helpers
 {
     public static class GestorFicheiros
     {
-        public static DataModelStore CarregarDataModel()
-        {
-            DataModelStore dm = new DataModelStore();
-            string data = string.Empty;
-            if (File.Exists("data.txt"))
-            {
-                try
-                {
-                    data = File.ReadAllText("data.txt");
-                }
-                catch (IOException ex)
-                {
-                    Console.WriteLine("Não foi possível abrir o ficheiro backup.txt.");
-                    Console.WriteLine(ex.Message);
-                }
-               // dm.DataModel = JsonConvert.DeserializeObject<DataModel>(data);
-                return dm;
-            }
-            return null;
-        }
-        public static void GravarDataModel()
-        {
-            string dataToSave = JsonConvert.SerializeObject(DataModelStore.Instance.DataModel);
-            try
-            {
-                File.WriteAllText("data.txt", dataToSave);
-            }
-            catch (IOException ex)
-            {
-                Console.WriteLine("Não foi possível criar/guardar o ficheiro. ");
-                Console.WriteLine(ex.Message);
-            }
-        }
+        //public static DataModelStore CarregarDataModel()
+        //{
+        //    DataModelStore dm = new DataModelStore();
+        //    string data = string.Empty;
+        //    if (File.Exists("data.txt"))
+        //    {
+        //        try
+        //        {
+        //            data = File.ReadAllText("data.txt");
+        //        }
+        //        catch (IOException ex)
+        //        {
+        //            Console.WriteLine("Não foi possível abrir o ficheiro backup.txt.");
+        //            Console.WriteLine(ex.Message);
+        //        }
+        //       // dm.DataModel = JsonConvert.DeserializeObject<DataModel>(data);
+        //        return dm;
+        //    }
+        //    return null;
+        //}
+        //public static void GravarDataModel()
+        //{
+        //    string dataToSave = JsonConvert.SerializeObject(DataModelStore.Instance.DataModel);
+        //    try
+        //    {
+        //        File.WriteAllText("data.txt", dataToSave);
+        //    }
+        //    catch (IOException ex)
+        //    {
+        //        Console.WriteLine("Não foi possível criar/guardar o ficheiro. ");
+        //        Console.WriteLine(ex.Message);
+        //    }
+        //}
         public static List<Utilizador> LoadUsers()
         {
             using (StreamReader r = new StreamReader("users.txt"))
@@ -58,33 +58,31 @@ namespace _1TP_SchemaWaterfall.Helpers
 
         public static void GravaUsers(List<Utilizador>users )
         {
-            //open file stream
             using (StreamWriter file = new StreamWriter("users.txt"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                //serialize object directly into file stream
+                //serializa o objecto directamente para o ficheiro em stream
                 serializer.Serialize(file, users);
             }
         }
 
         public static List<UtilizadorRegisto> LoadUsersDados()
         {
-            if (!File.Exists("utilizadordados.txt")) return null;
-            using (StreamReader r = new StreamReader("utilizadordados.txt"))
+            if (!File.Exists("utilizadoresdados.txt")) return null;
+            using (StreamReader r = new StreamReader("utilizadoresdados.txt"))
             {
                 string json = r.ReadToEnd();
-                List<UtilizadorRegisto> users = JsonConvert.DeserializeObject<List<UtilizadorRegisto>>(json);
-                return users;
+                List<UtilizadorRegisto> userdados = JsonConvert.DeserializeObject<List<UtilizadorRegisto>>(json);
+                return userdados;
             }
         }
 
         public static void GravaUsers(List<UtilizadorRegisto> userdados)
         {
-            //open file stream
             using (StreamWriter file = new StreamWriter("utilizadoresdados.txt"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                //serialize object directly into file stream
+                //serializa o objecto directamente para o ficheiro em stream
                 serializer.Serialize(file, userdados);
             }
         }
@@ -102,11 +100,10 @@ namespace _1TP_SchemaWaterfall.Helpers
 
         public static void GravaProjetos(List<Projeto> projetos)
         {
-            //open file stream
             using (StreamWriter file = new StreamWriter("projetos.txt"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                //serialize object directly into file stream
+                //serializa o objecto directamente para o ficheiro em stream
                 serializer.Serialize(file, projetos);
             }
         }
@@ -124,11 +121,10 @@ namespace _1TP_SchemaWaterfall.Helpers
 
         public static void GravaTarefas(List<Tarefa> tarefas)
         {
-            //open file stream
             using (StreamWriter file = new StreamWriter("tarefas.txt"))
             {
                 JsonSerializer serializer = new JsonSerializer();
-                //serialize object directly into file stream
+                //serializa o objecto directamente para o ficheiro em stream
                 serializer.Serialize(file, tarefas);
             }
         }

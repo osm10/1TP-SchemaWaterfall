@@ -24,7 +24,6 @@ namespace _1TP_SchemaWaterfall
             po.User = ut;
             po.Tarefas = new List<Tarefa>();
             Subtarefa subtarefa = new Subtarefa();
-            subtarefa.subtarefas = new List<Subtarefa>();
             subtarefa.Quantas = 4;
             subtarefa.Descricao = "teste";
             subtarefa.Nome = "Recolha de requisitos";

@@ -14,5 +14,12 @@ namespace _1TP_SchemaWaterfall.Models
         public DateTime Datainicio { get; set; }
 
         public List<Tarefa> Tarefas { get; set; }
+
+        public Projeto()
+        {
+            Tarefas = new List<Tarefa>();
+            User = new Utilizador();
+        }
     }
+    
 }

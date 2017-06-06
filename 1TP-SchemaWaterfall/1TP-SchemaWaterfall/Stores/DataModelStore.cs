@@ -19,8 +19,13 @@ namespace _1TP_SchemaWaterfall.Stores
             {
                 return;
             }
-            DataModel = new DataModel {UtilizadorList = GestorFicheiros.LoadUsers()};
-            //UserList = GestorFicheiros.LoadUsers();
+            DataModel = new DataModel
+            {
+                UtilizadorList = GestorFicheiros.LoadUsers(),
+                UtilizadorDados = GestorFicheiros.LoadUsersDados(),
+                ProjetosList = GestorFicheiros.LoadProjetos()
+            };
+            
         }
       
     }
