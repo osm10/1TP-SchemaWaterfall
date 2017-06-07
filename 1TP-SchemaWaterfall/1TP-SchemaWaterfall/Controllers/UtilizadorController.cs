@@ -9,7 +9,7 @@ namespace _1TP_SchemaWaterfall.Controllers
 {
     public class UtilizadorController
     {
-        private List<UtilizadorRegisto> Utilizadores { get; set; }
+        public List<UtilizadorRegisto> Utilizadores;
 
         public UtilizadorController()
         {
@@ -25,6 +25,13 @@ namespace _1TP_SchemaWaterfall.Controllers
             }
             return false;
         }
+
+        /// <summary>
+        /// Método de Editar dados de um Utilizador
+        /// </summary>
+        /// <param name="indice">indice da lista</param>
+        /// <param name="nut"> alterações feitas no utlizador</param>
+        /// <returns>retorna um booleano</returns>
         public bool EditarUtilizador(int indice, UtilizadorRegisto nut)
         { 
             if (nut == null  || indice < 0 || indice >= Utilizadores.Count) return false;         

@@ -1,11 +1,17 @@
 ﻿using System.Collections.Generic;
 using _1TP_SchemaWaterfall.Models;
+using _1TP_SchemaWaterfall.Stores;
 
 namespace _1TP_SchemaWaterfall.Controllers
 {
     public class ProjetoController
     {
-        public List<Projeto> Projetos = new List<Projeto>();
+        public List<Projeto> Projetos;
+
+        public ProjetoController()
+        {
+            Projetos = DataModelStore.Instance.DataModel.ProjetosList;
+        }
 
         public bool CriarProjeto(Projeto p)
         {

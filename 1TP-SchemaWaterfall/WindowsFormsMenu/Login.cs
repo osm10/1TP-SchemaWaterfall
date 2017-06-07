@@ -34,7 +34,7 @@ namespace WindowsFormsMenu
             //Application.Run(new Form1());
             // Navigate to a URL.
             //System.Diagnostics.Process.Start("http://www.microsoft.com");
-            RegistarUtilizador ru = new RegistarUtilizador(this);
+            RegistarUtilizador ru = new RegistarUtilizador();
             ru.Show();
             this.Hide();
         }

@@ -99,14 +99,31 @@ namespace WindowsFormsMenu
 
         private void criarUtilizadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistarUtilizador ru = new RegistarUtilizador(this);
+            Form ru = new RegistarUtilizador();
+            ru.MdiParent = this;
             ru.Show();
         }
 
         private void apagarUtilizadorToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            EditaApagaUttilizador apagaUttilizador = new EditaApagaUttilizador();
+            Form apagaUttilizador = new EditaApagaUttilizador();
+            apagaUttilizador.MdiParent = this;
             apagaUttilizador.Show();
         }
+
+        private void projetosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form vpros = new ViewProjetos();
+            vpros.MdiParent = this;
+            vpros.Show();
+        }
+
+        private void utilizadoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form vuts = new ViewUtilizadores();
+            vuts.MdiParent = this;
+            vuts.Show();
+        }
+
     }
 }

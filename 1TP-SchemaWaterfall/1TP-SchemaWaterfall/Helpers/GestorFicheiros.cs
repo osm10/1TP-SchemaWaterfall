@@ -1,17 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using _1TP_SchemaWaterfall.Models;
-using _1TP_SchemaWaterfall.Stores;
 
 namespace _1TP_SchemaWaterfall.Helpers
 {
     public static class GestorFicheiros
     {
+        private static string _usersFile = "users.txt";
+        private static string _utilizadoresdadosFile = "utilizadoresdados.txt";
+        private static string _projetosFile = "projetos.txt";
+        private static string _tarefasFile = "tarefas.txt";
+
         //public static DataModelStore CarregarDataModel()
         //{
         //    DataModelStore dm = new DataModelStore();
@@ -47,39 +47,37 @@ namespace _1TP_SchemaWaterfall.Helpers
         //}
         public static List<Utilizador> LoadUsers()
         {
-            using (StreamReader r = new StreamReader("users.txt"))
+            using (StreamReader r = new StreamReader(_usersFile))
             {
                 string json = r.ReadToEnd();
-                List<Utilizador> users = JsonConvert.DeserializeObject<List<Utilizador>>(json);
-                return users;
+                return JsonConvert.DeserializeObject<List<Utilizador>>(json);
             }
 
         }
 
         public static void GravaUsers(List<Utilizador>users )
         {
-            using (StreamWriter file = new StreamWriter("users.txt"))
+            using (StreamWriter file = new StreamWriter(_usersFile))
             {
-                JsonSerializer serializer = new JsonSerializer();
                 //serializa o objecto directamente para o ficheiro em stream
-                serializer.Serialize(file, users);
+                new JsonSerializer().Serialize(file, users);
             }
         }
 
         public static List<UtilizadorRegisto> LoadUsersDados()
         {
-            if (!File.Exists("utilizadoresdados.txt")) return null;
-            using (StreamReader r = new StreamReader("utilizadoresdados.txt"))
+            if (!File.Exists(_utilizadoresdadosFile)) return null;
+
+            using (StreamReader r = new StreamReader(_utilizadoresdadosFile))
             {
                 string json = r.ReadToEnd();
-                List<UtilizadorRegisto> userdados = JsonConvert.DeserializeObject<List<UtilizadorRegisto>>(json);
-                return userdados;
+                return JsonConvert.DeserializeObject<List<UtilizadorRegisto>>(json);
             }
         }
 
         public static void GravaUsers(List<UtilizadorRegisto> userdados)
         {
-            using (StreamWriter file = new StreamWriter("utilizadoresdados.txt"))
+            using (StreamWriter file = new StreamWriter(_utilizadoresdadosFile))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serializa o objecto directamente para o ficheiro em stream
@@ -89,18 +87,17 @@ namespace _1TP_SchemaWaterfall.Helpers
 
         public static List<Projeto> LoadProjetos()
         {
-            if (!File.Exists("projetos.txt")) return null;
-            using (StreamReader r = new StreamReader("projetos.txt"))
+            if (!File.Exists(_projetosFile)) return null;
+            using (StreamReader r = new StreamReader(_projetosFile))
             {
                 string json = r.ReadToEnd();
-                List<Projeto> projetos = JsonConvert.DeserializeObject<List<Projeto>>(json);
-                return projetos;
+                return JsonConvert.DeserializeObject<List<Projeto>>(json);
             }
         }
 
         public static void GravaProjetos(List<Projeto> projetos)
         {
-            using (StreamWriter file = new StreamWriter("projetos.txt"))
+            using (StreamWriter file = new StreamWriter(_projetosFile))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serializa o objecto directamente para o ficheiro em stream
@@ -110,23 +107,43 @@ namespace _1TP_SchemaWaterfall.Helpers
 
         public static List<Tarefa> LoadTarefas()
         {
-            if (!File.Exists("tarefas.txt")) return null;
-            using (StreamReader r = new StreamReader("tarefas.txt"))
+            if (!File.Exists(_tarefasFile)) return null;
+            using (StreamReader r = new StreamReader(_tarefasFile))
             {
                 string json = r.ReadToEnd();
-                List<Tarefa> tarefas = JsonConvert.DeserializeObject<List<Tarefa>>(json);
-                return tarefas;
+                return JsonConvert.DeserializeObject<List<Tarefa>>(json);
             }
         }
 
         public static void GravaTarefas(List<Tarefa> tarefas)
         {
-            using (StreamWriter file = new StreamWriter("tarefas.txt"))
+            using (StreamWriter file = new StreamWriter(_tarefasFile))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 //serializa o objecto directamente para o ficheiro em stream
                 serializer.Serialize(file, tarefas);
             }
         }
+
+        /*
+        public static List<T> Load<T>(string filepath)
+        {
+            if (!File.Exists(filepath)) return null;
+            using (StreamReader r = new StreamReader(filepath))
+            {
+                string json = r.ReadToEnd();
+                return JsonConvert.DeserializeObject<List<T>>(json);
+            }
+        }
+
+        public static void Grava<T>(List<T> elems, string filepath)
+        {
+            using (StreamWriter file = new StreamWriter(filepath))
+            {
+                //serializa o objecto directamente para o ficheiro em stream
+                new JsonSerializer().Serialize(file, filepath);
+            }
+        }
+        */
     }
 }

@@ -11,7 +11,7 @@ namespace WindowsFormsMenu
 {
     public partial class RegistarUtilizador : Form
     {
-        public RegistarUtilizador(Form f)
+        public RegistarUtilizador()
         {
             InitializeComponent();
             //f.Show();

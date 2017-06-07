@@ -231,7 +231,7 @@
             // criarUtilizadorToolStripMenuItem
             // 
             this.criarUtilizadorToolStripMenuItem.Name = "criarUtilizadorToolStripMenuItem";
-            this.criarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(202, 26);
+            this.criarUtilizadorToolStripMenuItem.Size = new System.Drawing.Size(247, 26);
             this.criarUtilizadorToolStripMenuItem.Text = "Criar Utilizador";
             this.criarUtilizadorToolStripMenuItem.Click += new System.EventHandler(this.criarUtilizadorToolStripMenuItem_Click);
             // 
@@ -344,25 +344,27 @@
             // projetosToolStripMenuItem
             // 
             this.projetosToolStripMenuItem.Name = "projetosToolStripMenuItem";
-            this.projetosToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.projetosToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.projetosToolStripMenuItem.Text = "Projetos";
+            this.projetosToolStripMenuItem.Click += new System.EventHandler(this.projetosToolStripMenuItem_Click);
             // 
             // utilizadoresToolStripMenuItem
             // 
             this.utilizadoresToolStripMenuItem.Name = "utilizadoresToolStripMenuItem";
-            this.utilizadoresToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.utilizadoresToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.utilizadoresToolStripMenuItem.Text = "Utilizadores";
+            this.utilizadoresToolStripMenuItem.Click += new System.EventHandler(this.utilizadoresToolStripMenuItem_Click);
             // 
             // tarefasToolStripMenuItem1
             // 
             this.tarefasToolStripMenuItem1.Name = "tarefasToolStripMenuItem1";
-            this.tarefasToolStripMenuItem1.Size = new System.Drawing.Size(163, 26);
+            this.tarefasToolStripMenuItem1.Size = new System.Drawing.Size(181, 26);
             this.tarefasToolStripMenuItem1.Text = "Tarefas";
             // 
             // bugsToolStripMenuItem
             // 
             this.bugsToolStripMenuItem.Name = "bugsToolStripMenuItem";
-            this.bugsToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.bugsToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.bugsToolStripMenuItem.Text = "Bugs";
             // 
             // toolBarToolStripMenuItem
@@ -371,7 +373,7 @@
             this.toolBarToolStripMenuItem.CheckOnClick = true;
             this.toolBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
-            this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.toolBarToolStripMenuItem.Text = "&Toolbar";
             this.toolBarToolStripMenuItem.Click += new System.EventHandler(this.ToolBarToolStripMenuItem_Click);
             // 
@@ -381,7 +383,7 @@
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(163, 26);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.statusBarToolStripMenuItem.Text = "&Status Bar";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
             // 

@@ -20,7 +20,7 @@ namespace WindowsFormsMenu
         }
         Projeto pro = new Projeto();
         UtilizadorController uc = new UtilizadorController();
-        Tarefa tarefa = new Tarefa();
+        //Tarefa tarefa = new Tarefa();
         private string mytextbox2; 
         private void ShowTextBox2()
         {
@@ -39,10 +39,11 @@ namespace WindowsFormsMenu
             }
             try
             {            
-                tarefa.Tipo = TarefaTipo.Analysis;
+                //tarefa.Tipo = TarefaTipo.Analysis;
                 pro.Nome = textBox1.Text;
                 pro.User.Username = mytextbox2;
-                pro.Tarefas.Add(tarefa);
+                //pro.Tarefas.Add(tarefa);
+                pro.Tarefa.Tipo= TarefaTipo.Analysis;
 
                 if (DataModelStore.Instance.DataModel.ProjetosList != null)
                 {

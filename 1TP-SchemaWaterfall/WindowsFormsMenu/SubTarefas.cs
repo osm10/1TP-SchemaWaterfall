@@ -19,8 +19,6 @@ namespace WindowsFormsMenu
 
         private void button1_Click(object sender, EventArgs e)
         { 
-            Projetos pros = new Projetos();
-            pros.Show();
             Close();
 
         }

@@ -13,12 +13,14 @@ namespace WindowsFormsMenu
         public EditaApagaUttilizador()
         {
             InitializeComponent();
-            CenterToParent();
-            //List<UtilizadorRegisto> lista = DataModelStore.Instance.DataModel.UtilizadorDados;
-            //var bindingList = new BindingList<UtilizadorRegisto>(lista);
-            ////var source = new BindingSource(bindingList, null);
+            //CenterToParent();
 
-            //dataGridView1.DataSource = bindingList;
+            //if (dataGridView1.CurrentRow != null) Pos = dataGridView1.CurrentRow.Index;
+            //utr.Nome = dataGridView1[0, Pos].ToString();
+            //utr.Bident = int.Parse(dataGridView1[1, Pos].Value.ToString());
+            //utr.Utilizador.Username = dataGridView1[2, Pos].Value.ToString();
+            //utr.Utilizador.Password = uc.ListarUtilizadores()[Pos].Utilizador.Password;
+            
         }
         private void EditaApagaUttilizador_Load(object sender, EventArgs e)
         {
@@ -29,16 +31,22 @@ namespace WindowsFormsMenu
                     dataGridView1.Rows.Add(userdados.Nome, userdados.Bident, userdados.Utilizador.Username);
                 }
             }
-
         }
 
         private void LoadEdAp()
         {
-            if (dataGridView1.CurrentRow != null) Pos = dataGridView1.CurrentRow.Index;
-            utr.Nome = dataGridView1[0, Pos].ToString();
-            utr.Bident = int.Parse(dataGridView1[1, Pos].Value.ToString());
-            utr.Utilizador.Username = dataGridView1[2, Pos].ToString();
-            utr.Utilizador.Password = uc.ListarUtilizadores()[Pos].Utilizador.Password;
+            //List<UtilizadorRegisto> lista = DataModelStore.Instance.DataModel.UtilizadorDados;
+            //var bindingList = new BindingList<UtilizadorRegisto>(lista);
+            //var source = new BindingSource(bindingList, null);
+
+            //dataGridView1.DataSource = source;
+            if (uc.ListarUtilizadores() != null)
+            {
+                foreach (var userdados in uc.ListarUtilizadores())
+                {
+                    dataGridView1.Rows.Add(userdados.Nome, userdados.Bident, userdados.Utilizador.Username);
+                }
+            }
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -48,11 +56,9 @@ namespace WindowsFormsMenu
                 MessageBox.Show("Verifique se todos os campos estão preenchidos!!!",
                   "Preenchimento Incompleto", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            utr.Nome = "Ximenez";
-            utr.Bident = 123456789;
-            utr.Utilizador.Username = "xmz";
-            utr.Utilizador.Password = "xpto";
-            MessageBox.Show(uc.EditarUtilizador(1,utr) ? "Utilizador alterado com sucesso!" : "Erro!");
+
+            MessageBox.Show(uc.EditarUtilizador(Pos, utr) ? "Utilizador alterado com sucesso!" : "Erro!");
+            Limpar();
             
         }
 
@@ -70,11 +76,27 @@ namespace WindowsFormsMenu
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.CurrentRow != null) Pos = dataGridView1.CurrentRow.Index;
-            utr.Nome = dataGridView1[0, Pos].ToString();
-            utr.Bident = int.Parse(dataGridView1[1, Pos].Value.ToString());
-            utr.Utilizador.Username = dataGridView1[2, Pos].ToString();
+            //int bi;
+            if (dataGridView1.CurrentRow != null) Pos = e.RowIndex;
+            DataGridViewRow SelectRow = dataGridView1.Rows[Pos];
+            utr.Nome = SelectRow.Cells[0].Value.ToString();
+            utr.Bident =int.Parse(SelectRow.Cells[1].Value.ToString());
+            utr.Utilizador.Username = SelectRow.Cells[2].Value.ToString();
+            //utr.Nome = (string) dataGridView1[0, Pos].Value;
+            //if (int.TryParse(dataGridView1[1, Pos].Value.ToString(), out bi)) utr.Bident = bi;
+            //else
+            //{
+            //    MessageBox.Show("B.I Inválido!");
+            //}
+            //utr.Utilizador.Username = (string) dataGridView1[2, Pos].Value;
             utr.Utilizador.Password = uc.ListarUtilizadores()[Pos].Utilizador.Password;
+        }
+
+        private void Limpar()
+        {       
+            dataGridView1.Rows.Clear();
+            //utr = null;
+            LoadEdAp();
         }
     }
 }
