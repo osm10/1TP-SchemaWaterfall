@@ -1,4 +1,8 @@
-﻿using System;
+﻿using _1TP_SchemaWaterfall.Models;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace WindowsFormsMenu
@@ -28,7 +32,17 @@ namespace WindowsFormsMenu
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = openFileDialog.FileName;
+                using (StreamReader r = new StreamReader(FileName))
+                {
+                    string json = r.ReadToEnd();
+                    var pros = JsonConvert.DeserializeObject<List<Projeto>>(json);
+                }
+                Projetos projetos = new Projetos();
+                projetos.MdiParent = this;
+                projetos.Show();
             }
+
+           
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)

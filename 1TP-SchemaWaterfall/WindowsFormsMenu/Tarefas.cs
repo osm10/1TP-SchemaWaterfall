@@ -18,9 +18,10 @@ namespace WindowsFormsMenu
         
         private void button1_Click(object sender, EventArgs e)
         {
-            SubTarefas stfs = new SubTarefas();
+            Form stfs = new SubTarefas();
+            stfs.MdiParent = MDIWaterfall.ActiveForm;
             stfs.Show();
-            Close();
+            //Close();
         }
 
         private void button2_Click(object sender, EventArgs e)
