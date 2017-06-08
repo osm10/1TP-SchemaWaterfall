@@ -199,6 +199,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Tarefas";
             this.Text = "Tarefas";
+            this.Load += new System.EventHandler(this.Tarefas_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

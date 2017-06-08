@@ -23,9 +23,12 @@ namespace WindowsFormsMenu
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form subtarefas = new SubTarefas();
-            subtarefas.MdiParent = ActiveForm;
-            subtarefas.Show();
+            Form tarefas = new Tarefas(pc.Projetos[ev.RowIndex],ev.RowIndex);
+            tarefas.MdiParent = ActiveForm;
+            tarefas.Show();
+            //Form subtarefas = new SubTarefas();
+            //subtarefas.MdiParent = ActiveForm;
+            //subtarefas.Show();
         }
 
         private void button3_Click(object sender, EventArgs e)

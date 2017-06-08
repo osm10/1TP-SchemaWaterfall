@@ -7,6 +7,15 @@ namespace _1TP_SchemaWaterfall.Controllers
     public class TarefaController
     {
         List<Subtarefa> subtarefas = new List<Subtarefa>();
+
+        public List<Tarefa> Tarefas;
+
+        public TarefaController()
+        {
+            Tarefas = new List<Tarefa>();
+        }
+
+
         public bool AdicionarSubtarefa(Tarefa ta, Subtarefa subt)
         {
             if (ta != null && subt != null)

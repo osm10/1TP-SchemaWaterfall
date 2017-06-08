@@ -14,16 +14,20 @@ namespace _1TP_SchemaWaterfall.Controllers
             Projetos = DataModelStore.Instance.DataModel.ProjetosList;
         }
 
-        public bool CriarProjeto(Projeto p)
+        /// <summary>
+        /// Método para editar projetos
+        /// </summary>
+        /// <param name="indice"></param>
+        /// <param name="pro"></param>
+        /// <returns></returns>
+        public bool EditarProjetos(int indice, Projeto pro)
         {
-            if (p != null)
-            {
-                Projetos.Add(p);
-                return true;
-            }
-            return false;
-        }
+            if (pro == null || indice < 0 || indice >= Projetos.Count) return false;
 
+            Projetos[indice] = pro;
+            GestorFicheiros.GravaProjetos(Projetos);
+            return true;
+        }
         public bool RemoverProjeto(Projeto p)
         {
             if (Projetos == null) return false;
@@ -38,6 +42,16 @@ namespace _1TP_SchemaWaterfall.Controllers
                         return true;
                     }
                 }
+            }
+            return false;
+        }
+
+        public bool CriarProjeto(Projeto p)
+        {
+            if (p != null)
+            {
+                Projetos.Add(p);
+                return true;
             }
             return false;
         }

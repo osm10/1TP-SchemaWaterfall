@@ -20,6 +20,7 @@ namespace WindowsFormsMenu
         }
         Projeto pro = new Projeto();
         UtilizadorController uc = new UtilizadorController();
+        
         //Tarefa tarefa = new Tarefa();
         private string mytextbox2; 
         private void ShowTextBox2()
@@ -68,7 +69,7 @@ namespace WindowsFormsMenu
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Form fTarefas = new Tarefas(pro);
+            Form fTarefas = new Tarefas(pro, DataModelStore.Instance.DataModel.ProjetosList.Count-1);
             fTarefas.MdiParent = MDIWaterfall.ActiveForm;
             fTarefas.Show();
             //Open = false;
