@@ -8,5 +8,12 @@ namespace _1TP_SchemaWaterfall.Models
         public string Nome { get; set; }
         public int Quantas { get; set; }
         public string Descricao { get; set; }
+
+        public List<Subtarefa> SubtarefasList;
+
+        public Subtarefa()
+        {
+            SubtarefasList = new List<Subtarefa>();
+        }
     }
 }

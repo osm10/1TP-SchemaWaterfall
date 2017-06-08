@@ -23,7 +23,8 @@ namespace _1TP_SchemaWaterfall.Models
         Coding,
         Testing,
         Implementation,
-        Maintenance
+        Maintenance,
+        Completa
     }
 
 

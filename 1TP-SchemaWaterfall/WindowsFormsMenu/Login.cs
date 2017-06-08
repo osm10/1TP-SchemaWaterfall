@@ -10,8 +10,7 @@ namespace WindowsFormsMenu
         public Login()
         {
             InitializeComponent();
-            textBox2.UseSystemPasswordChar = true; //para ocultar os caracteres da textbox2 password
-            
+            textBox2.UseSystemPasswordChar = true; //para ocultar os caracteres da textbox2 password           
         }
         
         private void button1_Click(object sender, EventArgs e)
@@ -20,7 +19,7 @@ namespace WindowsFormsMenu
             {
                 MDIWaterfall mw = new MDIWaterfall();
                 mw.Show();
-                //ValidarLogin(textBox1.Text,textBox2.Text);
+                //ValidarLogin(textBox1.Text, textBox2.Text);
             }
             catch (Exception exception)
             {

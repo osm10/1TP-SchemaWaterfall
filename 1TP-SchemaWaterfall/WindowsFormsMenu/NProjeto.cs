@@ -68,7 +68,7 @@ namespace WindowsFormsMenu
         }
         private void button2_Click(object sender, EventArgs e)
         {
-            Form fTarefas = new Tarefas();
+            Form fTarefas = new Tarefas(pro);
             fTarefas.MdiParent = MDIWaterfall.ActiveForm;
             fTarefas.Show();
             //Open = false;

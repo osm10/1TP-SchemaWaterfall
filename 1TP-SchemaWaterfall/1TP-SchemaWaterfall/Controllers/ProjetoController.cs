@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using _1TP_SchemaWaterfall.Helpers;
 using _1TP_SchemaWaterfall.Models;
 using _1TP_SchemaWaterfall.Stores;
 
@@ -25,13 +26,16 @@ namespace _1TP_SchemaWaterfall.Controllers
 
         public bool RemoverProjeto(Projeto p)
         {
-            if (Projetos.Count > 0)
+            if (Projetos == null) return false;
+           
+            foreach (var pro in Projetos)
             {
-                foreach (var pro in Projetos)
+                if (pro == p)
                 {
-                    if (pro == p)
+                    if (Projetos.Remove(p))
                     {
-                        Projetos.Remove(p);
+                        GestorFicheiros.GravaProjetos(Projetos);
+                        return true;
                     }
                 }
             }

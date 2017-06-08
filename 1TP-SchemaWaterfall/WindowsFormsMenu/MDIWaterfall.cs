@@ -32,14 +32,13 @@ namespace WindowsFormsMenu
             if (openFileDialog.ShowDialog(this) == DialogResult.OK)
             {
                 string FileName = openFileDialog.FileName;
-                using (StreamReader r = new StreamReader(FileName))
+                if (FileName.EndsWith("projetos.txt"))
                 {
-                    string json = r.ReadToEnd();
-                    var pros = JsonConvert.DeserializeObject<List<Projeto>>(json);
+                    ViewProjetos viewProjetos = new ViewProjetos();
+                    viewProjetos.MdiParent = ActiveForm;
+                    viewProjetos.Show();
                 }
-                Projetos projetos = new Projetos();
-                projetos.MdiParent = this;
-                projetos.Show();
+                else MessageBox.Show("Escolha o ficheiro com o nome de projetos.txt !");
             }
 
            
